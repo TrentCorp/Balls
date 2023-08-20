@@ -18,14 +18,24 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {       
+        Destroyed();
+        EnemyTargeter();       
+    }
+
+    //Destroy enemy if position is found lower than this on y axis
+    public void Destroyed()
     {
-        Vector3 lookDirection = ((player.transform.position - transform.position).normalized);
-        enemyRb.AddForce(lookDirection * speed);
-        //Destroy enemy if position is found lower than this on y axis
         if (transform.position.y < -10)
         {
             Destroy(gameObject);
         }
-        
+    }
+
+    //Target player and move at them
+    public void EnemyTargeter()
+    {
+        Vector3 lookDirection = ((player.transform.position - transform.position).normalized);
+        enemyRb.AddForce(lookDirection * speed);
     }
 }

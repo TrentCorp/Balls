@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
         SpawnEnemyWave(1);
         //Instantiates a powerup object
         SpawnPowerup();
-        Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), goalkeeperPrefab.transform.rotation);
     }
 
     // Update is called once per frame
@@ -30,11 +30,20 @@ public class SpawnManager : MonoBehaviour
         if (enemyCount == 0)
         {
             waveNumber++;
-            SpawnEnemyWave(waveNumber);
+            if (waveNumber % 3 == 0)
+            {
+                SpawnEnemyWave(waveNumber--);
+                Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), goalkeeperPrefab.transform.rotation);
+            }
+            else
+            {
+                SpawnEnemyWave(waveNumber);
+            }
+           
             // as well as enemies spawned also spawn a power up with the new wave borrowing the generatespawnposition
             SpawnPowerup();
         }
-    }
+    } 
 
     //returns a Vector3
     private Vector3 GenerateSpawnPosition()

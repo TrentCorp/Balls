@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     public int enemyCount;
     public int waveNumber = 1;
     public GameObject powerupPrefab;
+    public GameObject goalkeeperPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class SpawnManager : MonoBehaviour
         SpawnEnemyWave(1);
         //Instantiates a powerup object
         SpawnPowerup();
+        Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
     }
 
     // Update is called once per frame

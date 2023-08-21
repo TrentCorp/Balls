@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     public int enemyCount;
-    private Rigidbody enemyRb;
-    private GameObject player;
+    public Rigidbody enemyRb;
+    protected GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Target player and move at them
-    public void EnemyTargeter()
+    protected virtual void EnemyTargeter()
     {
         Vector3 lookDirection = ((player.transform.position - transform.position).normalized);
         enemyRb.AddForce(lookDirection * speed);

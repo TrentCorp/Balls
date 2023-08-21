@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
-    public int enemyCount;
+    //ENCAPSULATION
+    public int enemyCount { get; protected set; }
     public Rigidbody enemyRb;
     protected GameObject player;
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //ABSTRACTION
     //Target player and move at them
     protected virtual void EnemyTargeter()
     {

@@ -32,8 +32,8 @@ public class SpawnManager : MonoBehaviour
             waveNumber++;
             if (waveNumber % 3 == 0)
             {
-                SpawnEnemyWave(waveNumber--);
-                Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), goalkeeperPrefab.transform.rotation);
+                SpawnEnemyWave(waveNumber-1);
+                SpawnGoalie();
             }
             else
             {
@@ -71,5 +71,10 @@ public class SpawnManager : MonoBehaviour
     void SpawnPowerup()
     {
         Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+    }
+
+    void SpawnGoalie()
+    {
+        Instantiate(goalkeeperPrefab, GenerateSpawnPosition(), goalkeeperPrefab.transform.rotation);
     }
 }

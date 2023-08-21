@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4165187268090244, guid: 11a653b9169986c4f9436a3002fb4516, type: 3}
       propertyPath: m_LocalScale.x
@@ -748,6 +748,7 @@ MonoBehaviour:
   enemyCount: 0
   waveNumber: 1
   powerupPrefab: {fileID: 2299351297568268723, guid: 20563ffa40ca1244f8fd20dcfca369c5, type: 3}
+  goalkeeperPrefab: {fileID: 7762932433608630893, guid: 03e506acb26b0934199180dc2716a127, type: 3}
 --- !u!4 &1834287746
 Transform:
   m_ObjectHideFlags: 0
@@ -761,7 +762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918198485 stripped
 GameObject:
